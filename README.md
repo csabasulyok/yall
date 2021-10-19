@@ -1,4 +1,4 @@
-# yall
+# yall2
 
 Yet Another Logging Library
 
@@ -20,7 +20,7 @@ Yet Another Logging Library
 ## 1. Message logging
 
 ```ts
-import yall from 'yall';
+import yall from 'yall2';
 
 yall.debug('Debug level message');
 yall.info('Info level message');
@@ -46,7 +46,7 @@ YALL_FILENAME=out.log YALL_COLORED=false npm run example
 
 ```ts
 import express from 'express';
-import yall, { yallMorgan } from 'yall';
+import yall, { yallMorgan } from 'yall2';
 
 const app = express();
 
@@ -71,7 +71,7 @@ npm run example:morgan
 
 ```ts
 import axios from 'axios';
-import { yallAxiosConnect } from 'yall';
+import { yallAxiosConnect } from 'yall2';
 
 // decorate default instance
 yallAxiosConnect(axios, {

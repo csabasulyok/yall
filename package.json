@@ -1,5 +1,5 @@
 {
-  "name": "yall",
+  "name": "yall2",
   "version": "1.0.0",
   "description": "Yet Another Logging Library",
   "author": "Csaba Sulyok <csaba.sulyok@gmail.com>",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csabasulyok/yall.git"
+    "url": "git+https://github.com/csabasulyok/yall2.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
