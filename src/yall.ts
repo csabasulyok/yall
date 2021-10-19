@@ -1,7 +1,5 @@
-import { IncomingMessage, ServerResponse } from 'http';
 import path from 'path';
 import winston, { Logger } from 'winston';
-import morgan, { TokenIndexer } from 'morgan';
 import autoBind from 'auto-bind';
 import extol from 'extol';
 
@@ -23,10 +21,8 @@ export class Yall {
   @extol(true, { json: true })
   yallTimestamp: boolean;
 
-  private logger: winston.Logger;
-  private morganLevel: string;
-  morganMiddleware: (req, res, next) => void;
-  private stackInfo = 'unknown';
+  logger: winston.Logger;
+  stackInfo = 'unknown';
 
   constructor() {
     const transports: winston.transport[] = [new winston.transports.Console()];
@@ -47,24 +43,6 @@ export class Yall {
       level: this.yallLevel,
       format: winston.format.combine(...formatters),
       transports,
-    });
-
-    // custom morgan message format, setting log level based on request method
-    const morganFormatter = (tokens: TokenIndexer, req: IncomingMessage, res: ServerResponse) => {
-      this.morganLevel = req.method === 'GET' || req.method === 'HEAD' ? 'debug' : 'info';
-      const contentLength = res.getHeader('content-length') || 0;
-      const responseTime = tokens['response-time'](req, res);
-      return `Receive ${req.method} ${req.url} ${res.statusCode} - ${contentLength} bytes ${responseTime}ms`;
-    };
-
-    // custom morgan middleware coupled with winston
-    this.morganMiddleware = morgan(morganFormatter, {
-      stream: {
-        write: (message) => {
-          this.stackInfo = 'express';
-          this.logger.log(this.morganLevel, message);
-        },
-      },
     });
 
     autoBind(this);
@@ -118,5 +96,4 @@ export class Yall {
  * Default instace
  */
 const yall = new Yall();
-export const { morganMiddleware } = yall;
 export default yall;

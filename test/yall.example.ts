@@ -1,4 +1,4 @@
-import yall from '../src/yall';
+import yall from '../src';
 
 yall.debug('Debug level message');
 yall.info('Info level message');
