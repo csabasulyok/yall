@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import morgan, { TokenIndexer } from 'morgan';
-import yall from './yall';
+import yall from './index';
 
 export type MorganMiddleware = (req, res, next) => void;
 

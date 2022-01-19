@@ -46,7 +46,8 @@ YALL_FILENAME=out.log YALL_COLORED=false npm run example
 
 ```ts
 import express from 'express';
-import yall, { yallMorgan } from 'yall2';
+import yall from 'yall2';
+import yallMorgan from 'yall2/yallmorgan';
 
 const app = express();
 
@@ -71,7 +72,7 @@ npm run example:morgan
 
 ```ts
 import axios from 'axios';
-import { yallAxiosConnect } from 'yall2';
+import yallAxiosConnect from 'yall2/yallaxios';
 
 // decorate default instance
 yallAxiosConnect(axios, {
