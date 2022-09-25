@@ -34,7 +34,8 @@ export class Yall {
     const formatters = [
       this.yallColored && winston.format.colorize({ all: true }),
       this.yallTimestamp && winston.format.timestamp(),
-      this.yallTimestamp && winston.format.printf((info) => `${info.timestamp} {${this.stackInfo}} [${info.level}]: ${info.message}`),
+      this.yallTimestamp &&
+        winston.format.printf((info) => `${info.timestamp} {${this.stackInfo}} [${info.level}]: ${info.message}`),
       !this.yallTimestamp && winston.format.printf((info) => `{${this.stackInfo}} [${info.level}]: ${info.message}`),
     ].filter((f) => f);
 
