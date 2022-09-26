@@ -1,6 +1,6 @@
 {
   "name": "yall2",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Yet Another Logging Library",
   "author": "Csaba Sulyok <csaba.sulyok@gmail.com>",
   "license": "ISC",
@@ -25,19 +25,20 @@
     "format": "prettier --write '**/*.ts' --config ./.prettierrc.yml",
     "ci": "pnpm lint && pnpm format && pnpm build",
     "publish:local": "pnpm publish --registry=http://localhost:8081/repository/npm-releases/",
-    "example": "node -r ts-node/register test/yall.example.ts",
-    "example:morgan": "node -r ts-node/register test/yallmorgan.example.ts",
-    "example:axios": "node -r ts-node/register test/yallaxios.example.ts"
+    "example": "ts-node test/yall.example.ts",
+    "example:morgan": "ts-node test/yallmorgan.example.ts",
+    "example:axios": "ts-node test/yallaxios.example.ts"
   },
   "dependencies": {
-    "auto-bind": "5.0.1",
+    "auto-bind": "4.0.0",
     "axios": "0.27.2",
     "express": "4.18.1",
-    "extol": "1.1.0",
+    "extol": "1.2.2",
     "morgan": "1.10.0",
     "winston": "3.3.3"
   },
   "devDependencies": {
+    "@types/express": "4.17.14",
     "@types/morgan": "1.9.3",
     "@types/node": "18.7.18",
     "@typescript-eslint/eslint-plugin": "5.38.0",
