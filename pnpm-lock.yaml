@@ -16,7 +16,7 @@ specifiers:
   eslint-plugin-import: 2.26.0
   eslint-plugin-prettier: 4.2.1
   express: 4.18.1
-  extol: 1.2.2
+  extol: 1.2.3
   morgan: 1.10.0
   prettier: 2.7.1
   rimraf: 3.0.2
@@ -28,7 +28,7 @@ dependencies:
   auto-bind: 4.0.0
   axios: 0.27.2
   express: 4.18.1
-  extol: 1.2.2
+  extol: 1.2.3
   morgan: 1.10.0
   winston: 3.3.3
 
@@ -1168,8 +1168,8 @@ packages:
       - supports-color
     dev: false
 
-  /extol/1.2.2:
-    resolution: {integrity: sha512-vlRUeLN3IjkhxDjDfPjVvhxdbDkUv/Z2QD+Mng4jW+yN6NYh0ZYPyoR0n11uKHNxX6lBbBp8MKrjcOCZ7zxy6g==}
+  /extol/1.2.3:
+    resolution: {integrity: sha512-AOpJOfF4o8KdrtdipanX5NzrF1M1FVynyDnovte6din3ODzmYB232IOztBT8LjSALnNqrASO/IMN3YGM+uH17A==}
     dependencies:
       change-case: 4.1.2
       dotenv: 16.0.2
