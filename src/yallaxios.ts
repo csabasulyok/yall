@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
-import yall from './index';
+import yall from './yall';
 
 /**
  * YALL axios middleware settings
@@ -28,7 +28,7 @@ function responseToMessage(res: AxiosResponse): string {
 /**
  * Decorate Axios instance with YALL logging
  */
-export default function yallAxiosConnect(instance: AxiosInstance, config?: YallAxiosConfig): AxiosInstance {
+export function yallAxiosConnect(instance: AxiosInstance, config?: YallAxiosConfig): AxiosInstance {
   // default config values
   const finalConfig: YallAxiosConfig = {
     readLevel: 'debug',

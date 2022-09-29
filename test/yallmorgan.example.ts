@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import express from 'express';
-import yall from '../src';
-import yallMorgan from '../src/yallmorgan';
+import yall, { yallMorgan } from '../src';
 
 const app = express();
 

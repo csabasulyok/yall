@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
-import yallAxiosConnect from '../src/yallaxios';
+import { yallAxiosConnect } from '../src';
 
 (async () => {
   /**

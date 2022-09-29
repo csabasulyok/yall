@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import morgan, { TokenIndexer } from 'morgan';
-import yall from './index';
+import yall from './yall';
 
 export type MorganMiddleware = (req, res, next) => void;
 
@@ -15,7 +15,7 @@ export type YallMorganConfig = {
 /**
  * Build Express middleware using morgan, but integrating with YALL settings
  */
-export default function yallMorgan(config?: YallMorganConfig): MorganMiddleware {
+export function yallMorgan(config?: YallMorganConfig): MorganMiddleware {
   // default config values
   const finalConfig: YallMorganConfig = {
     readLevel: 'debug',
