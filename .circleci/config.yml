@@ -67,14 +67,13 @@ jobs:
             - '.'
 
 workflows:
-  lint-workflow:
+  lint-and-publish-workflow:
     jobs:
       - lint
-  publish-workflow:
-    jobs:
       - publish:
+          context: npm-registry
+          requires:
+            - lint
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
+              only: main
