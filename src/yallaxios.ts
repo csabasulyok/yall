@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import yall from './yall';
 
 /**
@@ -36,7 +36,7 @@ export function yallAxiosConnect(instance: AxiosInstance, config?: YallAxiosConf
     ...config,
   };
 
-  const onRequest = (req: AxiosRequestConfig) => {
+  const onRequest = <D>(req: InternalAxiosRequestConfig<D>) => {
     req.headers.sendTime = Date.now().toString();
     return req;
   };
