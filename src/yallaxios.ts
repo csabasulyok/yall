@@ -58,7 +58,11 @@ export function yallAxiosConnect(instance: AxiosInstance, config?: YallAxiosConf
 
     if (axios.isAxiosError(error)) {
       const axiosError = error as AxiosError;
-      yall.logger.warn(responseToMessage(axiosError.response));
+      if (axiosError?.response?.config) {
+        yall.logger.warn(responseToMessage(axiosError.response));
+      } else {
+        yall.logger.warn(`Axios error: ${axiosError}`);
+      }
     } else {
       yall.logger.error(`Unknown error ${error}`);
     }
